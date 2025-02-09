@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply font-mono;
+    @apply font-mono bg-neutral-500;
   }
 
   h1 {
