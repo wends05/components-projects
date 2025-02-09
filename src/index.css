@@ -1,6 +1,27 @@
 @import "tailwindcss";
 
+#root {
+  @apply bg-neutral-500 min-h-screen text-neutral-50;
+}
 
-:root {
-  @apply bg-neutral-100 text-neutral-900;
+@layer base {
+  body {
+    @apply font-mono;
+  }
+
+  h1 {
+    @apply text-5xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold;
+  }
+
+  h3 {
+    @apply text-lg font-semibold;
+  }
+
+  p {
+    @apply text-base;
+  }
 }
