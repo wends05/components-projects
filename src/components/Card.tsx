@@ -15,7 +15,7 @@ const Card = ({ title, content, size = "small" }: CardProps) => {
         ease: "easeOut",
       }}
       className={`flex flex-col gap-4 p-6 bg-neutral-50 rounded-3xl text-neutral-900 drop-shadow-lg ${
-        size === "small" ? "max-w-min" : size === "large" ? "max-w-78" : ""
+        size === "small" ? "w-56" : size === "large" ? "w-80" : ""
       }`}
     >
       <h1>{title}</h1>
