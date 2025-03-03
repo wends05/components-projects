@@ -6,8 +6,9 @@ const getRouter = Router();
 getRouter.get("/cards", async (req, res, next) => {
   try {
     const cards = await prisma.card.findMany();
-    res.json(cards);
+    res.status(200).json(cards);
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: "Internal Server Error", error });
   }
 });

@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import postRouter from "./routers/postRoutes"
 import dotenv from "dotenv";
+import getRouter from "./routers/getRoutes";
 
 dotenv.config()
 const PORT = process.env.PORT || 4000
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
   res.json("Hello world!")
 })
 
+app.use(getRouter)
 app.use(postRouter)
 
 app.listen(PORT, () => {
