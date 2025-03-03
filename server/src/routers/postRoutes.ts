@@ -10,9 +10,10 @@ interface CardForm {
   size: size;
 }
 
-postRouter.get("/cards", async (req, res, next) => {
+postRouter.post("/cards", async (req, res, next) => {
   try {
-    const cardForm: CardForm = req.body;
+    const cardForm = req.body;
+    console.log(cardForm);
 
     if (
       cardForm.size !== "SMALL" &&
@@ -32,7 +33,8 @@ postRouter.get("/cards", async (req, res, next) => {
     res.status(201).json(card);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Internal Server Error", error });
+    const errorMessage = error instanceof Error ? error.message : "An error occurred";
+    res.status(500).json({ message: errorMessage, error });
   }
 });
 
