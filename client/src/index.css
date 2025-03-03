@@ -1,12 +1,16 @@
 @import "tailwindcss";
 
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
 #root {
-  @apply bg-neutral-500 min-h-screen text-neutral-50;
+  @apply bg-neutral-500 min-h-full text-neutral-50;
 }
 
 @layer base {
   body {
-    @apply font-mono bg-neutral-500;
+    @apply font-mono bg-neutral-500 h-full;
   }
 
   h1 {
@@ -23,5 +27,13 @@
 
   p {
     @apply text-base;
+  }
+
+  button {
+    @apply bg-slate-400 py-1 px-2 rounded-md text-neutral-50 cursor-pointer;
+  }
+
+  input, select, textarea {
+    @apply rounded-md bg-neutral-400 text-neutral-800 ring-2 px-1 ring-neutral-900;
   }
 }
