@@ -1,26 +1,16 @@
-import Card from "./components/Card";
+import Hero from "./components/Hero";
+import CardsArea from "./components/CardsArea";
+import AddCard from "./components/AddCard";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 function App() {
   return (
-    <div className="flex flex-col gap-10 h-screen p-10">
+    <div className="flex flex-col gap-20  p-10 bg-neutral-500">
+      <ReactQueryDevtools initialIsOpen={false} />
+      <Hero />
       <div>
-        <h1>Component Design</h1>
-        <h2>Assignment 1</h2>
-        <h3>Wendell Terence Dador</h3>
-      </div>
-      <h2 className="flex justify-center w-full">Component: Card</h2>
-
-      <div className="flex flex-col md:flex-row items-center justify-center gap-10 p-10">
-        <Card
-          title="Large Card"
-          content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta cumque vero sed, possimus placeat veniam, temporibus velit atque similique expedita sequi. Temporibus, dolore?"
-          size="large"
-        />
-        <Card
-          title="Small Card"
-          content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta cumque vero sed, possimus placeat veniam, temporibus velit atque similique expedita sequi. Temporibus, dolore?"
-          size="small"
-        />
+        <AddCard />
+        <CardsArea />
       </div>
     </div>
   );
