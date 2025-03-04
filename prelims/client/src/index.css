@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-700 font-mono text-neutral-100;
+  }
+
+  h1 {
+    @apply text-3xl
+  }
+
+  h2 {
+    @apply text-xl
+  }
+
+  td {
+    @apply px-4 py-1;
+  }
+}
