@@ -9,9 +9,9 @@ export const employees: Employee[] = [
   },
   {
     id: 2,
-    name: "Mama",
-    salary: 25000,
-    role: "Developer",
+    name: "Fyang",
+    salary: 1200000,
+    role: "CEO",
   },
   {
     id: 3,
@@ -48,5 +48,17 @@ export const employees: Employee[] = [
     name: "Toni Fowler",
     salary: 69000,
     role: "Developer",
+  },
+  {
+    id: 9,
+    name: "Nessarose",
+    salary: 150000,
+    role: "Developer",
+  },
+  {
+    id: 10,
+    name: "Boq",
+    salary: 20000,
+    role: "Munchkin",
   },
 ];
