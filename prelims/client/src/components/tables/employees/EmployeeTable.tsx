@@ -4,7 +4,7 @@ import EmployeeTableRow from "./EmployeeTableRow";
 interface TableProps {
   title: string;
   data: Employee[];
-  rows?: Record<string, string>
+  rows?: Record<string, string>;
 }
 
 const Table = ({ title, data }: TableProps) => {
@@ -14,6 +14,7 @@ const Table = ({ title, data }: TableProps) => {
       <table className="bg-neutral-500 rounded-3xl w-full">
         <thead>
           <tr className="*:py-2 *:text-center">
+            <td>Employee ID</td>
             <td>Name</td>
             <td>Role</td>
             <td>Salary</td>
@@ -21,7 +22,6 @@ const Table = ({ title, data }: TableProps) => {
           </tr>
         </thead>
         <tbody className="border-t-2 ">
-      
           {data.map((employee) => (
             <EmployeeTableRow key={employee.id} employee={employee} />
           ))}
