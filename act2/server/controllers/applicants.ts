@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response, Router } from "express";
+import { NextFunction, Request, Response } from "express";
 import prisma from "../prisma/prisma";
 import { Applicant } from "@prisma/client";
 

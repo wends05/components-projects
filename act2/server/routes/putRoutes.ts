@@ -3,7 +3,7 @@ import { editApplicant } from "../controllers/applicants";
 
 const applicantPutRoutes = Router();
 
-applicantPutRoutes.put("/applicant", editApplicant);
+applicantPutRoutes.put("/applicant/:id", editApplicant);
 
 const putRoutes = Router();
 putRoutes.use(applicantPutRoutes);
