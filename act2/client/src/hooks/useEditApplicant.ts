@@ -16,13 +16,18 @@ const useEditApplicant = () => {
         method: "PUT",
       });
     },
-    onSuccess: (data) => {
+    onSuccess: (applicant) => {
       queryClient.invalidateQueries({
         queryKey: ["applicants"],
       });
+      if (applicant) {
+        queryClient.invalidateQueries({
+          queryKey: ["applicant", applicant.id],
+        });
+      }
 
       toast.success(
-        `Applicant edited successfully: ${data?.firstName} ${data?.lastName}`,
+        `Applicant edited successfully: ${applicant?.firstName} ${applicant?.lastName}`,
       );
     },
     onError: (error) => {

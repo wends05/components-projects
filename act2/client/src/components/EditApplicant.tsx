@@ -4,10 +4,11 @@ import Applicant from "@/types/Applicant";
 import { useForm } from "react-hook-form";
 
 interface EditApplicantProps {
+  setEditing: (id: string | null) => void;
   id: string;
 }
 
-const EditApplicant = ({ id }: EditApplicantProps) => {
+const EditApplicant = ({ id, setEditing }: EditApplicantProps) => {
   const { data: applicant } = useGetApplicant(id);
 
   const { register, handleSubmit } = useForm<Applicant>({
@@ -26,10 +27,14 @@ const EditApplicant = ({ id }: EditApplicantProps) => {
     });
   };
   return (
-    <div className="flex min-h-screen w-screen items-center justify-center">
+    <div className="relative flex min-h-screen w-screen items-center justify-center">
+      <div
+        className="absolute z-0 h-full w-full bg-slate-500 opacity-55"
+        onClick={() => setEditing(null)}
+      ></div>
       <form
         onSubmit={handleSubmit(submitForm)}
-        className="flex flex-col gap-2 rounded-md bg-slate-600 max-w-md w-full p-10"
+        className="z-10 flex w-full max-w-md flex-col gap-2 rounded-md bg-slate-600 p-10"
       >
         <h1>Editing Applicant:</h1>
         <h3>

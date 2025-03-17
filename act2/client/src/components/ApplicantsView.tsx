@@ -43,12 +43,10 @@ const ApplicantsView = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            onClick={() => setEditing(null)}
             className="fixed top-0 left-0 z-10 flex h-screen w-screen items-center justify-center"
           >
-            <div className="z-0 h-screen w-full bg-slate-800 opacity-50"></div>
-            <div className="fixed z-10 flex min-h-screen items-center justify-center">
-              <EditApplicant id={editing} />
+            <div className="fixed flex min-h-screen items-center justify-center">
+              <EditApplicant setEditing={setEditing} id={editing} />
             </div>
           </m.div>
         )}
