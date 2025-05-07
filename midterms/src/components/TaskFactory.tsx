@@ -56,7 +56,7 @@ const TaskFactory = ({
                 {formatDate(new Date(task.dueDate), "PP")}
               </span>
               <span>
-                {isOverdue && (
+                {isOverdue && !task.completed && (
                   <span className="text-red-500 text-sm"> - Overdue</span>
                 )}
               </span>
