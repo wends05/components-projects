@@ -7,7 +7,7 @@ import { Sheet } from "./ui/sheet";
 import TaskEdit from "./TaskEdit";
 import { Dialog } from "./ui/dialog";
 import TaskDelete from "./TaskDelete";
-import { toast } from "sonner";
+import useOverdueTaskNotifier from "@/hooks/useOverdueTaskNotifier";
 
 interface TaskListProps {
   initialTasks: tasks[];
@@ -42,20 +42,8 @@ const TaskList = ({ initialTasks }: TaskListProps) => {
     setCurrentDeletingTask(task);
     setOpenDeleteDialog(true);
   };
-
-  useEffect(() => {
-    if (initialTasks.length > 0) {
-      const overdueTasksNumber = initialTasks.reduce((acc, task) => {
-        if (task.dueDate && task.dueDate < new Date() && !task.completed) {
-          return acc + 1;
-        }
-        return acc;
-      }, 0);
-      if (overdueTasksNumber > 0) {
-        toast.error(`You have ${overdueTasksNumber} overdue tasks!`);
-      }
-    }
-  }, [initialTasks]);
+  
+  useOverdueTaskNotifier();
 
   return (
     <Dialog open={openDeleteDialog} onOpenChange={setOpenDeleteDialog}>
